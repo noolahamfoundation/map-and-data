@@ -1,0 +1,135 @@
+<head>
+<meta charset="UTF-8">
+  <!-- Plotly.js -->
+  <script src="plotly.js/dist/plotly.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+
+
+
+Plotly.d3.csv("https://raw.githubusercontent.com/noolahamfoundation/map-and-data/master/data/Sri%20Lanka%20-%20Education%20Info%20-%20By%20District.csv", function(data){ processData(data) });
+
+function processData(data){
+
+  var xDistrict = data.map(function(row){
+    return row['Name_Tamil'];
+  });
+
+  var ySinhala_Medium = data.map(function(row){
+    return row['Sinhala_Medium'];
+  });
+
+  var yTamil_Medium = data.map(function(row){
+    return row['Tamil_Medium'];
+  });
+
+  var yEnglish_Medium = data.map(function(row){
+    return row['English_Medium'];
+  });
+
+  var yPrivate_School_Students = data.map(function(row){
+    return row['Private_School_Students'];
+  });
+
+  var yNum_Gov_Schools = data.map(function(row){
+    return row['Num_Gov_Schools'];
+  });
+
+  var yGov_School_Teachers = data.map(function(row){
+    return row['Gov_School_Teachers'];
+  });
+
+  var yGov_School_Students = data.map(function(row){
+    return row['Gov_School_Students'];
+  });
+
+  var yNum_Private_Schools = data.map(function(row){
+    return row['Num_Private_Schools'];
+  });
+
+  var Sinhala_Medium = {
+    x: xDistrict,
+    y: ySinhala_Medium,
+    type: 'bar',
+    name: 'சிங்கள வழிக் கல்வி'
+  };
+
+  var Tamil_Medium = {
+    x: xDistrict,
+    y: yTamil_Medium,
+    type: 'bar',
+    name: 'தமிழ் வழிக் கல்வி'
+  };
+
+  var English_Medium = {
+    x: xDistrict,
+    y: yEnglish_Medium,
+    type: 'bar',
+    name: 'ஆங்கில வழிக் கல்வி'
+  };
+
+  var Private_School_Students = {
+    x: xDistrict,
+    y: yPrivate_School_Students,
+    type: 'bar',
+    name: 'தனியார் கல்வி'
+  };
+
+  var Gov_School_Students = {
+    x: xDistrict,
+    y: yGov_School_Students,
+    type: 'scatter',
+    name: 'Gov_School_Students'
+  };
+
+  var Num_Gov_Schools = {
+    x: xDistrict,
+    y: yNum_Gov_Schools,
+    yaxis: 'y2',
+    type: 'scatter',
+    name: 'Num_Gov_Schools'
+  };
+
+  var Gov_School_Teachers = {
+    x: xDistrict,
+    y: yGov_School_Teachers,
+    yaxis: 'y2',
+    type: 'scatter',
+    name: 'Gov_School_Teachers'
+  };
+
+  var Num_Private_Schools = {
+    x: xDistrict,
+    y: yNum_Private_Schools,
+    yaxis: 'y2',
+    type: 'scatter',
+    name: 'Num_Private_Schools'
+  };
+
+  var layout = {
+    title:'<b>இலங்கயில் கல்வி மொழி அடிப்படையில் மாணவர் எண்ணிக்கை - மாவட்டங்கள் வாரியாக - 2016</b><br>மூலம்: http://www.moe.gov.lk/sinhala/images/Statistics/stat2015_2016/2016_new.pdf',
+    height: 800,
+    width: 1200,
+    xaxis: {
+      title: ''
+    },
+    yaxis: {
+      title: 'மாணவர் எண்ணிக்கை'
+    },
+  };
+
+  var data = [Sinhala_Medium, Tamil_Medium, English_Medium, Private_School_Students];
+  Plotly.newPlot('myDiv', data, layout);
+
+}
+
+
+
+
+
+  </script>
+</body>
