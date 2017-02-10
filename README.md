@@ -42,4 +42,4 @@
 * http://www.geoforall.org/  
 * http://guides.library.duke.edu/datavis
 * http://www.cs.duke.edu/courses/spring15/compsci216/lectures/09-dataviz.pdf
-
+* https://www.cs.duke.edu/courses/compsci216/
