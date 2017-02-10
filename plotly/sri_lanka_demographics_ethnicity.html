@@ -1,0 +1,143 @@
+<head>
+<meta charset="UTF-8">
+  <!-- Plotly.js -->
+  <script src="plotly.js/dist/plotly.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+
+
+
+Plotly.d3.csv("https://raw.githubusercontent.com/noolahamfoundation/map-and-data/master/data/Sri%20Lanka%20Population%20by%20Ethnicity%20.csv", function(data){ processData(data) });
+
+function processData(data){
+
+  var xYear = data.map(function(row){
+    return row['ஆண்டு'];
+  });
+
+  var ySinhalese = data.map(function(row){
+    return row['சிங்களவர்'];
+  });
+
+  var ySLTamil = data.map(function(row){
+    return row['இலங்கைத்_தமிழர்'];
+  });
+
+  var yMalaiyahamTamil = data.map(function(row){
+    return row['மலையகத்_தமிழர்'];
+  });
+
+  var ySriLakanMoors = data.map(function(row){
+    return row['இலங்கை_முஸ்லீம்'];
+  });
+
+  var yBurgher = data.map(function(row){
+    return row['பரங்கியர்'];
+  });
+
+  var ySLMalays = data.map(function(row){
+    return row['இலங்கை_மலாயர்'];
+  });
+
+  var yOther = data.map(function(row){
+    return row['பிறர்'];
+  });
+
+  var Sinhalese = {
+    x: xYear,
+    y: ySinhalese,
+    type: 'scatter',
+    name: 'சிங்களவர்'
+  };
+
+  var Sri_Lankan_Tamil = {
+    x: xYear,
+    y: ySLTamil,
+    type: 'scatter',
+    name: 'இலங்கைத் தமிழர்'
+  };
+
+  var Upcountry_Tamil = {
+    x: xYear,
+    y: yMalaiyahamTamil,
+    type: 'scatter',
+    name: 'மலையகத் தமிழர்'
+  };
+
+  var Sri_Lankan_Moors = {
+    x: xYear,
+    y: ySriLakanMoors,
+    type: 'scatter',
+    name: 'இலங்கை முஸ்லீம்கள்'
+  };
+
+  var Burgher = {
+    x: xYear,
+    y: yBurgher,
+    type: 'scatter',
+    name: 'பரங்கியர்'
+  };
+
+  var Sri_Lankan_Malays = {
+    x: xYear,
+    y: ySLMalays,
+    type: 'scatter',
+    name: 'இலங்கை மலாயர்'
+  };
+
+  var Other = {
+    x: xYear,
+    y: yOther,
+    type: 'scatter',
+    name: 'பிறர்'
+  };
+
+  var layout = {
+    title:'இனங்கள் வாரியாக இலங்கை மக்கள் தொகை வீதாசாரம்',
+    height: 800,
+    width: 800,
+    xaxis: {
+      title: 'ஆண்டு<br /><br />Source: http://www.cbsl.gov.lk/pics_n_docs/10_pub/_docs/statistics/other/econ_&_ss_2014_e.pdf',
+      autotick: false,
+      ticks: 'outside',
+      tick0: 1911,
+      dtick: 10
+    },
+    yaxis: {
+      title: '% மக்கள் தொகை'
+    },
+    annotations: [
+      {
+        x: 1964,
+        xref: 'x',
+        yref: 'y',
+        text: 'சிறிமா - சாத்திரி ஒப்பந்தம்',
+        showarrow: true,
+        ay: -200
+      },
+      {
+        x: 1983,
+        xref: 'x',
+        yref: 'y',
+        text: 'கறுப்பு யூலை கலவரங்கள்',
+        showarrow: true,
+        ay: -175
+      }
+    ]
+  };
+
+  var data = [Sinhalese, Sri_Lankan_Tamil, Upcountry_Tamil, Sri_Lankan_Moors, Burgher, Sri_Lankan_Malays, Other];
+  Plotly.newPlot('myDiv', data, layout);
+
+}
+
+
+
+
+
+  </script>
+</body>
