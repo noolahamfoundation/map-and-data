@@ -40,5 +40,6 @@
 * http://wiki.gis.com/wiki/index.php/Main_Page
 * http://gis.stackexchange.com/
 * http://www.geoforall.org/  
-
+* http://guides.library.duke.edu/datavis
+* http://www.cs.duke.edu/courses/spring15/compsci216/lectures/09-dataviz.pdf
 
