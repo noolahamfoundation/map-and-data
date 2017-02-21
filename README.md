@@ -42,7 +42,7 @@
 * Plotly / D3
 * GDAL - Geospatial Data Abstraction Library - http://www.sarasafavi.com/installing-gdalogr-on-ubuntu.html
 * mapshaper.org
-
+* QGIS - http://www.sarasafavi.com/installing-qgis-on-ubuntu.html
 
 # வெளி இணைப்புகள் 
 * https://github.com/FOSS4GAcademy
