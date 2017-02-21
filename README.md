@@ -32,8 +32,17 @@
 * தேர்தல் முடிவுகளை விளக்கும் நிலப்படம்
 
 ## தரவுகள்
-* [இலங்கையின் நீர் நிலைகள்](https://data.humdata.org/dataset/sri-lanka-water-bodies-0-0)
+* [Maps and GEO Infromation - SL Survey Department](http://www.survey.gov.lk/surveyweb/Home%20English/MapsandGEOInformation.php) 
 * [இலங்கையின் தேர்தல் மாவட்டங்கள் - geoJson](http://datameet.org/2015/11/17/map-of-electoral-districts-of-sri-lanka/)
+* [இலங்கையின் நீர் நிலைகள்](https://data.humdata.org/dataset/sri-lanka-water-bodies-0-0)
+
+## கருவிகளும் நுட்பங்களும்
+* GeoJson
+* Leaflet
+* Plotly / D3
+* GDAL - Geospatial Data Abstraction Library - http://www.sarasafavi.com/installing-gdalogr-on-ubuntu.html
+* mapshaper.org
+
 
 # வெளி இணைப்புகள் 
 * https://github.com/FOSS4GAcademy
